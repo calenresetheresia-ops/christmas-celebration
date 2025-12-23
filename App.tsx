@@ -2,12 +2,16 @@
 import React from 'react';
 import Snowfall from './components/Snowfall';
 import Countdown from './components/Countdown';
+import SantaVideo from './components/SantaVideo';
 
 const App: React.FC = () => {
   return (
     <div className="relative h-screen w-screen overflow-hidden flex flex-col items-center justify-center p-4">
       {/* Background Snowfall */}
       <Snowfall />
+
+      {/* Walking Santa using Veo Video Generation */}
+      <SantaVideo />
 
       {/* Magical Aura Effect */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none z-0"></div>

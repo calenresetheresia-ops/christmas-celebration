@@ -29,6 +29,58 @@
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
+    
+    @keyframes festive-pulse {
+      0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+      25% {
+        transform: scale(1.4);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);
+      }
+      100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+    }
+    
+    .animate-heartbeat {
+      animation: festive-pulse 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    /* Santa Walking Animations */
+    @keyframes santa-walk-across {
+      0% { transform: translateX(-250px); }
+      100% { transform: translateX(calc(100vw + 250px)); }
+    }
+
+    .santa-video-container {
+      position: fixed;
+      bottom: 20px;
+      left: 0;
+      z-index: 30;
+      pointer-events: none;
+      /* Smooth linear movement across the screen */
+      animation: santa-walk-across 30s linear infinite;
+    }
+
+    .video-wrapper {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+      background: #000;
+    }
+
+    @media (max-width: 768px) {
+      .video-wrapper {
+        width: 120px;
+        height: 120px;
+      }
+    }
   </style>
 <script type="importmap">
 {
